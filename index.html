@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday Bro 💙</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #ffffff;
+    color: #102a43;
+    overflow-x: hidden;
+}
+
+/* ================= INTRO ================= */
+
+#intro {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: opacity .8s ease, visibility .8s ease;
+}
+
+#intro.hide {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.intro-content {
+    max-width: 600px;
+    padding: 30px;
+    animation: introUp 1s ease;
+}
+
+.intro-emoji {
+    font-size: 65px;
+    animation: giftFloat 2s ease-in-out infinite;
+    margin-bottom: 20px;
+}
+
+.intro-small {
+    color: #1769e0;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 4px;
+    margin-bottom: 15px;
+}
+
+.intro-content h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(40px, 8vw, 75px);
+    line-height: 1;
+    color: #102a43;
+}
+
+.blue {
+    color: #1769e0;
+}
+
+.intro-content p {
+    color: #64748b;
+    margin: 25px 0;
+    line-height: 1.7;
+}
+
+.start-btn {
+    border: none;
+    background: #1769e0;
+    color: white;
+    padding: 16px 30px;
+    border-radius: 50px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 15px 35px rgba(23,105,224,.25);
+    transition: .3s;
+}
+
+.start-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(23,105,224,.35);
+}
+
+/* ================= MAIN ================= */
+
+#main {
+    display: none;
+}
+
+.container {
+    width: min(1050px, 90%);
+    margin: auto;
+}
+
+/* ================= NAV ================= */
+
+nav {
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Poppins', sans-serif;
+    font-size: 21px;
+    font-weight: 800;
+    color: #102a43;
+}
+
+.logo span {
+    color: #1769e0;
+}
+
+.music-btn {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 1px solid #dbeafe;
+    background: white;
+    color: #1769e0;
+    cursor: pointer;
+    font-size: 19px;
+    transition: .3s;
+}
+
+.music-btn:hover {
+    transform: rotate(15deg) scale(1.1);
+}
+
+/* ================= HERO ================= */
+
+.hero {
+    min-height: calc(100vh - 80px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    background: #dbeafe;
+    border-radius: 50%;
+    filter: blur(70px);
+    opacity: .7;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+}
+
+.date {
+    display: inline-block;
+    color: #1769e0;
+    background: #eff6ff;
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    animation: fadeUp .8s ease both;
+}
+
+.hero h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(45px, 9vw, 90px);
+    line-height: .95;
+    color: #102a43;
+    animation: fadeUp .9s ease .1s both;
+}
+
+.hero h1 span {
+    color: #1769e0;
+}
+
+.brother-name {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(25px, 5vw, 45px);
+    font-weight: 700;
+    margin-top: 20px;
+    color: #2563eb;
+    animation: fadeUp .9s ease .2s both;
+}
+
+.hero-text {
+    max-width: 620px;
+    margin: 25px auto;
+    color: #64748b;
+    line-height: 1.8;
+    animation: fadeUp .9s ease .3s both;
+}
+
+.hero-text strong {
+    color: #102a43;
+}
+
+/* ================= SCROLL ================= */
+
+.scroll {
+    margin-top: 35px;
+    color: #94a3b8;
+    font-size: 12px;
+    animation: bounce 2s infinite;
+}
+
+/* ================= AGE ================= */
+
+.age-section {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.section-label {
+    color: #1769e0;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.age-number {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(80px, 15vw, 150px);
+    font-weight: 800;
+    color: #1769e0;
+    line-height: 1;
+}
+
+.age-text {
+    color: #64748b;
+    margin-top: 10px;
+}
+
+/* ================= MESSAGE ================= */
+
+.message {
+    padding: 80px 0;
+}
+
+.message-card {
+    background: #f8fbff;
+    border: 1px solid #e0edff;
+    border-radius: 28px;
+    padding: clamp(30px, 6vw, 60px);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.message-card::before {
+    content: "💙";
+    position: absolute;
+    font-size: 150px;
+    opacity: .04;
+    right: -20px;
+    top: -40px;
+}
+
+.message-card h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(28px, 5vw, 45px);
+    margin-bottom: 20px;
+}
+
+.message-card p {
+    max-width: 700px;
+    margin: auto;
+    color: #64748b;
+    line-height: 1.9;
+}
+
+/* ================= SURPRISE ================= */
+
+.surprise {
+    padding: 90px 0;
+    text-align: center;
+}
+
+.surprise-box {
+    max-width: 650px;
+    margin: auto;
+}
+
+.surprise-box h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(30px, 6vw, 50px);
+}
+
+.surprise-box > p {
+    color: #64748b;
+    margin: 15px 0 30px;
+}
+
+.reveal-btn {
+    border: none;
+    background: #102a43;
+    color: white;
+    padding: 16px 30px;
+    border-radius: 50px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.reveal-btn:hover {
+    background: #1769e0;
+    transform: translateY(-4px);
+}
+
+.secret {
+    display: none;
+    margin-top: 35px;
+    padding: 30px;
+    background: #eff6ff;
+    border-radius: 25px;
+    animation: reveal .8s ease;
+}
+
+.secret.show {
+    display: block;
+}
+
+.secret .big {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.secret h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 28px;
+    color: #1769e0;
+    margin-bottom: 10px;
+}
+
+.secret p {
+    color: #64748b;
+    line-height: 1.8;
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    color: #94a3b8;
+    font-size: 13px;
+}
+
+footer span {
+    color: #1769e0;
+}
+
+/* ================= FLOATING EMOJIS ================= */
+
+.emoji {
+    position: fixed;
+    bottom: -50px;
+    pointer-events: none;
+    z-index: 1000;
+    animation: emojiUp 3s linear forwards;
+}
+
+/* ================= ANIMATIONS ================= */
+
+@keyframes introUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes giftFloat {
+    0%,100% {
+        transform: translateY(0) rotate(-5deg);
+    }
+    50% {
+        transform: translateY(-15px) rotate(5deg);
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    0%,100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(8px);
+    }
+}
+
+@keyframes reveal {
+    from {
+        opacity: 0;
+        transform: scale(.85);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes emojiUp {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:600px) {
+
+    nav {
+        height: 70px;
+    }
+
+    .hero {
+        min-height: calc(100vh - 70px);
+    }
+
+    .hero-text {
+        font-size: 14px;
+    }
+
+    .message-card {
+        border-radius: 20px;
+    }
+
+    .scroll {
+        margin-top: 25px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= INTRO ================= -->
+
+<div id="intro">
+
+    <div class="intro-content">
+
+        <div class="intro-emoji">🎁</div>
+
+        <div class="intro-small">
+            A LITTLE SURPRISE
+        </div>
+
+        <h1>
+            Hey Bro! 👋<br>
+            <span class="blue">This is for you.</span>
+        </h1>
+
+        <p>
+            Someone has prepared a small digital surprise
+            just for your birthday. 💙
+        </p>
+
+        <button class="start-btn" onclick="openBirthday()">
+            🎉 Open Your Surprise
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- ================= MAIN ================= -->
+
+<div id="main">
+
+    <div class="container">
+
+        <nav>
+
+            <div class="logo">
+                BRO<span>DAY</span> 💙
+            </div>
+
+            <button class="music-btn" onclick="toggleMusic()" id="musicBtn">
+                ♫
+            </button>
+
+        </nav>
+
+
+        <!-- HERO -->
+
+        <section class="hero">
+
+            <div>
+
+                <div class="date">
+                    06 • 09 • 2026
+                </div>
+
+                <h1>
+                    HAPPY<br>
+                    <span>BIRTHDAY</span>
+                </h1>
+
+                <div class="brother-name" id="brotherName">
+                    YOUR BROTHER
+                </div>
+
+                <p class="hero-text">
+
+                    Another year.
+                    Another chapter.
+                    Another opportunity to become even better. 🚀
+
+                    <br><br>
+
+                    Today, you are officially the
+                    <strong>main character.</strong> 😎
+
+                </p>
+
+                <div class="scroll">
+                    ↓ scroll for a little more
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- AGE -->
+
+        <section class="age-section">
+
+            <div class="section-label">
+                LEVEL UNLOCKED
+            </div>
+
+            <div class="age-number" id="ageNumber">
+                0
+            </div>
+
+            <div class="age-text">
+                years of being awesome 😎
+            </div>
+
+        </section>
+
+
+        <!-- MESSAGE -->
+
+        <section class="message">
+
+            <div class="message-card">
+
+                <div class="section-label">
+                    FROM YOUR SIBLING 💙
+                </div>
+
+                <h2>
+                    Happy Birthday, Bro! 🎂
+                </h2>
+
+                <p>
+
+                    You may be annoying sometimes 😂,
+                    but life wouldn't be the same without you.
+
+                    I'm genuinely proud of the person you're becoming.
+                    I hope this new year brings you bigger dreams,
+                    better opportunities, great memories and
+                    plenty of reasons to smile.
+
+                    <br><br>
+
+                    Keep going. Keep growing.
+                    And never forget that your sibling
+                    will always be cheering for you. 💙
+
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- SURPRISE -->
+
+        <section class="surprise">
+
+            <div class="surprise-box">
+
+                <div class="section-label">
+                    ONE LAST THING...
+                </div>
+
+                <h2>
+                    I have a surprise for you 👀
+                </h2>
+
+                <p>
+                    Don't leave yet...
+                    there's one more message waiting for you.
+                </p>
+
+                <button class="reveal-btn" onclick="revealSurprise()">
+                    🎁 Reveal Surprise
+                </button>
+
+                <div class="secret" id="secret">
+
+                    <div class="big">
+                        🎉🎂💙🥳
+                    </div>
+
+                    <h3>
+                        HAPPY BIRTHDAY BRO!
+                    </h3>
+
+                    <p>
+                        No matter how much we argue,
+                        annoy each other or make fun of each other...
+
+                        <br><br>
+
+                        I'm lucky to have you as my brother. ❤️
+
+                        <br><br>
+
+                        Here's to another amazing year.
+                        Make it unforgettable! 🚀
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <footer>
+            Made with 💙 just for <span>you</span>
+        </footer>
+
+    </div>
+
+</div>
+
+
+<!-- MUSIC -->
+
+<audio id="birthdayMusic" loop preload="auto">
+    <source src="birthday.mp3" type="audio/mpeg">
+</audio>
+
+
+<script>
+
+/* ================= CUSTOMIZE ================= */
+
+const birthdayPerson = {
+
+    name: "Dulanjaya",
+
+    age: 14
+
+};
+
+
+/* ================= START ================= */
+
+function openBirthday() {
+
+    const music = document.getElementById("birthdayMusic");
+
+    // Start music after user interaction
+    music.play().catch(() => {});
+
+    document.getElementById("intro").classList.add("hide");
+
+    document.getElementById("main").style.display = "block";
+
+    document.getElementById("brotherName").textContent =
+        birthdayPerson.name;
+
+    animateAge();
+
+    createEmojis();
+
+}
+
+
+/* ================= AGE ANIMATION ================= */
+
+function animateAge() {
+
+    const number = document.getElementById("ageNumber");
+
+    let current = 0;
+
+    const target = birthdayPerson.age;
+
+    const duration = 1800;
+
+    const start = performance.now();
+
+    function update(time) {
+
+        const progress = Math.min(
+            (time - start) / duration,
+            1
+        );
+
+        current = Math.floor(progress * target);
+
+        number.textContent = current;
+
+        if (progress < 1) {
+
+            requestAnimationFrame(update);
+
+        } else {
+
+            number.textContent = target;
+
+        }
+
+    }
+
+    requestAnimationFrame(update);
+
+}
+
+
+/* ================= MUSIC ================= */
+
+function toggleMusic() {
+
+    const music =
+        document.getElementById("birthdayMusic");
+
+    const button =
+        document.getElementById("musicBtn");
+
+    if (music.paused) {
+
+        music.play();
+
+        button.textContent = "♫";
+
+    } else {
+
+        music.pause();
+
+        button.textContent = "🔇";
+
+    }
+
+}
+
+
+/* ================= SURPRISE ================= */
+
+function revealSurprise() {
+
+    const secret =
+        document.getElementById("secret");
+
+    secret.classList.add("show");
+
+    createEmojis();
+
+    setTimeout(() => {
+
+        secret.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
+
+    }, 200);
+
+}
+
+
+/* ================= EMOJIS ================= */
+
+function createEmojis() {
+
+    const emojis = [
+        "🎉",
+        "🎂",
+        "💙",
+        "🥳",
+        "🎈",
+        "✨",
+        "🎁",
+        "😎",
+        "⭐"
+    ];
+
+    for (let i = 0; i < 25; i++) {
+
+        const emoji =
+            document.createElement("div");
+
+        emoji.className = "emoji";
+
+        emoji.textContent =
+            emojis[Math.floor(Math.random() * emojis.length)];
+
+        emoji.style.left =
+            Math.random() * 100 + "vw";
+
+        emoji.style.fontSize =
+            (18 + Math.random() * 22) + "px";
+
+        emoji.style.animationDuration =
+            (2.5 + Math.random() * 2) + "s";
+
+        document.body.appendChild(emoji);
+
+        setTimeout(() => {
+
+            emoji.remove();
+
+        }, 5000);
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
